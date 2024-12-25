@@ -588,6 +588,9 @@ header{
             margin: 0.625rem 0;
             color: var(--shadow-color);
           }
+        & a{
+            color: var(--main-color);
+        }
         }
         &:hover{
           .project-image{
