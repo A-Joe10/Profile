@@ -20,11 +20,24 @@ html {
 }
 body {
   font-family: 'Roboto Slab',  sans-serif;
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite; */
   background-image: url(../images/elctronics.jpg);
-  background-size: cover;
-  background-position: 0 -14px;
   background-attachment: fixed;
   color: var(--sec-color);
+
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 ul {
     list-style: none;
@@ -104,9 +117,8 @@ header{
   height: 6rem;
   width: 100%;
   z-index: 999;
-  box-shadow: 0 0px 20px 2px #18265a;
-  background-color: transparent;
-  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.564);
+  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(3px);
   border-radius: 2px;
   .container{
@@ -176,7 +188,7 @@ header{
       }
     }
   }
-  @media (max-width: 500px){
+  @media (max-width: 992px){
     .container{
       flex-direction: column;
       & h2{
@@ -196,8 +208,8 @@ header{
   }
 }
 .home{
-  padding-top: 5rem;
-  height: 100svh;
+  padding: 10rem 0 5rem 0;
+  /* height: 100svh; */
   position: relative;
   &::after{
     content: '';
@@ -617,12 +629,17 @@ header{
     .contact-content{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      align-items: center;
       .contact-image{
-        position: relative;
-        & img{
-          max-width: 100%;
-        }
+      /* border: 2px solid white; */
+      /* text-align: center; */
+        >h2{
+        font-size: 30px;
+      }
+      & p{
+      &:last-of-type{
+      text-decoration: underline;
+      }
+      }
       }
       & form{
         display: flex;
@@ -673,6 +690,7 @@ footer{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       align-items: center;
+      justify-content: center;
       & p{
         margin-bottom: 10px;
         font-size: 20px;
@@ -697,6 +715,11 @@ footer{
           }
         }
         .footer-links{
+        /* border: 1px solid white; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        margin: auto;
+        width: fit-content;
           & a{
             color: var(--sec-color);
             font-size: 30px;
